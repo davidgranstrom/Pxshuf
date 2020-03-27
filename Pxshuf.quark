@@ -1,0 +1,9 @@
+(
+    name: "Pxshuf",
+    summary: "",
+    version: "1.0.0",
+    schelp: "Pxshuf",
+    dependencies: [],
+    license: "GPLv3",
+    copyright: "David Granström 2018"
+)
