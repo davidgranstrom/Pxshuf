@@ -1,5 +1,5 @@
 class:: Pxshuf
-summary:: Sequentially embed values in a list in a random order with no repetitions
+summary:: Sequentially embed values from a list in a random order with no repetitions
 related:: Classes/Prand, Classes/Pshuf
 categories:: Streams-Patterns-Events>Patterns>List
 

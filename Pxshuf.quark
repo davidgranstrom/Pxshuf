@@ -1,6 +1,6 @@
 (
     name: "Pxshuf",
-    summary: "",
+    summary: "Sequentially embed values from a list in a random order with no repetitions",
     version: "1.0.0",
     schelp: "Pxshuf",
     dependencies: [],
