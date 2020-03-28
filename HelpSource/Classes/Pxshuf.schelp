@@ -1,0 +1,41 @@
+class:: Pxshuf
+summary:: Sequentially embed values in a list in a random order with no repetitions
+related:: Classes/Prand, Classes/Pshuf
+categories:: Streams-Patterns-Events>Patterns>List
+
+description::
+
+Returns a shuffled version of the strong::list:: item by item, with n
+strong::repeats::. The list is shuffled again for every repetition avoiding
+repeating values (last item is never equal to first item after the repeat).
+
+Examples::
+
+code::
+(
+var a, b;
+a = Pxshuf([1, 2, 3, 4, 5], 3);	// repeat 3 times
+b = a.asStream;
+16.do({ b.next.postln; });
+)
+
+// Pxshuf used as a sequence of pitches:
+
+(
+SynthDef(\help_sinegrain, {arg out=0, freq=440, sustain=0.05;
+		var env;
+		env = EnvGen.kr(Env.perc(0.01, sustain, 0.2), doneAction: Done.freeSelf);
+		Out.ar(out, SinOsc.ar(freq, 0, env))
+}).add;
+)
+
+(
+a = Pxshuf([60, 61, 63, 65, 72], inf).asStream;
+Routine({
+	loop({
+	Synth(\help_sinegrain, [\freq, a.next.midicps]);
+	0.15.wait;
+	})
+}).play;
+)
+::
