@@ -2,6 +2,12 @@
 
 Sequentially embed values from a list in a random order with no repetitions
 
+## Installation
+
+```supercollider
+Quarks.install("https://github.com/davidgranstrom/Pxshuf");
+```
+
 ## Example
 
 ```supercollider
